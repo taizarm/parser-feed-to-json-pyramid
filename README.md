@@ -1,6 +1,10 @@
 # RSS Feed Parser to JSON
 This project is responsible for reading a specific RSS Feed and transforming it into a JSon file.
 
+## How to use under Heroku
+1) Access Heroku URL: http://rocky-bayou-75457.herokuapp.com/
+2) The default username is 'admin' and the default password is '1234admin'.
+
 ## How to install
 1) Clone this repository
 ````
