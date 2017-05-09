@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{request.locale_name}}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Parser Feed to Json Project</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    {% for error in errors %}
+      <div class="alert alert-danger" role="alert">{{ error }}</div>
+    {% endfor %}
+
+    <div class="starter-template">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            {% block content %}
+                <p>No content</p>
+            {% endblock content %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="//oss.maxcdn.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  </body>
+</html>
