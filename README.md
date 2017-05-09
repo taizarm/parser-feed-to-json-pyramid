@@ -4,9 +4,12 @@ This project is responsible for reading a specific RSS Feed and transforming it 
 ## How to install
 1) Clone this repository
 ````
-git clone https://github.com/taizarm/parser-feed-to-json.git
+git clone https://github.com/taizarm/parser-feed-to-json-pyramid.git
 ````
 2) Enter in the root folder of project
+```
+cd parser-feed-to-json-pyramid/
+```
 3) Create a virtualenv
 ```
 virtualenv -p python3 .venv
@@ -19,7 +22,18 @@ source .venv/bin/activate
 ````
 pip install -r requirements.txt
 ````
-6) Done!
+
+6) Configure Pyramid project
+```
+python setup.py develop
+```
+
+7) Initialize Pyramid server
+```
+pserve development.ini --reload
+```
+
+8) Done! Access your localhost URL project: http://localhost:6543/
 
 ## How to run standalone
 Run the command:
@@ -34,7 +48,6 @@ Be sure virtual env is activated. Run the command:
 ```
 py.test --cov
 ```
-
 
 If the coverage is not 100%, run this command to see the lines without tests:
 
