@@ -8,7 +8,7 @@ from parser_feed_to_json_pyramid.parser import parser
 from parser_feed_to_json_pyramid.tests import test_scenarios
 
 
-class TestParser():
+class TestParser:
 
     def setup_method(self):
         self.parser = parser.Parser()
@@ -127,15 +127,14 @@ class TestParser():
         assert res['description'] == []
 
     def test_parse_xml(self):
-        self.parser.populate_xml_content = Mock(
-            side_effect=self.side_effect_file
-        )
+
+        folder = os.path.dirname(__file__)
+        file_path = os.path.join(folder, 'feed_input_test.xml')
+        mock_return_value = self.parser.xml_root = \
+            ElementTree.parse(file_path).getroot()
+
+        self.parser.populate_xml_content = Mock(return_value=mock_return_value)
+
         self.parser.parse_xml()
 
         assert self.parser.json == test_scenarios.feed_input_file_expected_json
-
-    def side_effect_file(*args, **kwargs):
-        folder = os.path.dirname(__file__)
-        file_path = os.path.join(folder, 'feed_input_test.xml')
-
-        args[0].parser.xml_root = ElementTree.parse(file_path).getroot()

@@ -9,12 +9,12 @@ class Parser(object):
 
     def __init__(self):
         self.url = 'http://revistaautoesporte.globo.com/rss/ultimas/feed.xml'
-        self.xml_root = ''
+        self.xml_root = self.populate_xml_content()
         self.json = {'feed': []}
 
     def populate_xml_content(self):
         response = requests.get(self.url)
-        self.xml_root = ElementTree.fromstring(response.content)
+        return ElementTree.fromstring(response.content)
 
     def return_items_elements(self):
         return self.xml_root.findall('./channel/item')
@@ -73,8 +73,6 @@ class Parser(object):
         return item
 
     def parse_xml(self):
-        self.populate_xml_content()
-
         items = self.return_items_elements()
 
         for item in items:
