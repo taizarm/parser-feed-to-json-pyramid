@@ -5,11 +5,6 @@ from pyramid.httpexceptions import HTTPFound
 from pyramid.view import forbidden_view_config
 
 
-@forbidden_view_config()
-def forbidden_view(request):
-    return HTTPFound(location="login")
-
-
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
