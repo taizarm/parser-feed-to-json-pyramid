@@ -4,12 +4,12 @@ MarkupSafe==1.0
 PasteDeploy==1.5.2
 Pygments==2.2.0
 WebOb==1.7.2
+WebTest==2.0.27
 beautifulsoup4==4.6.0
 coverage==4.3.4
 hupper==0.4.4
 lxml==3.7.3
 mock==2.0.0
-parser-feed-to-json-pyramid==0.0
 pbr==3.0.0
 py==1.4.33
 pyramid==1.8.3
