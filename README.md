@@ -22,24 +22,30 @@ source .venv/bin/activate
 ````
 pip install -r requirements.txt
 ````
+6) Done!
 
-6) Configure Pyramid project
+## How to run standalone
+1) Run the command:
+```
+python  python parser_feed_to_json_pyramid/parser/parser.py
+```
+
+2) Done! You will see the output in your console.
+
+## How to run as webservice
+
+1) Configure Pyramid project
 ```
 python setup.py develop
 ```
 
-7) Initialize Pyramid server
+2) Initialize Pyramid server
 ```
 pserve development.ini --reload
 ```
 
-8) Done! Access your localhost URL project: http://localhost:6543/. The default username is 'admin' and the default password is '1234admin'.
+3) Done! Access your localhost URL project: http://localhost:6543/. The default username is 'admin' and the default password is '1234admin'.
 
-## How to run standalone
-Run the command:
-```
-python  python parser_feed_to_json_pyramid/parser/parser.py
-```
 
 ## How to run tests and see coverage
 
